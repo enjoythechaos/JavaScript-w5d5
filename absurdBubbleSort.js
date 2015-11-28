@@ -9,10 +9,8 @@ function askIfGreaterThan(el1, el2, callback) {
   reader.question("Is " + el1 + "greater than " + el2 + "?", function(answer) {
     if (answer === 'yes') {
       callback(true);
-      return true;
     } else {
       callback(false);
-      return false;
     }
   });
 }

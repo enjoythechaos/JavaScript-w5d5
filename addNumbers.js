@@ -9,14 +9,12 @@ function addNumbers(sum, numsLeft, completionCallback) {
     completionCallback(sum);
     reader.close();
   } else {
-      reader.question("Enter a number", function (givenNum) {
-        var given = parseInt(givenNum);
-        sum += given;
-        console.log("Current sum is: " + sum);
-        addNumbers(sum, (numsLeft - 1), completionCallback);
-      });
-
-
+    reader.question("Enter a number", function (givenNum) {
+      var given = parseInt(givenNum);
+      sum += given;
+      console.log("Current sum is: " + sum);
+      addNumbers(sum, (numsLeft - 1), completionCallback);
+    });
   }
 }
 
