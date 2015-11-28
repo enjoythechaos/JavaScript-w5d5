@@ -61,7 +61,7 @@ Hanoi.prototype.promptMove = function(callback) {
 };
 
 Hanoi.prototype.run = function(completionCallback) {
-  var newCallbackFunction = function(stack1, stack2) {
+  var gameLogic = function(stack1, stack2) {
     var answer = this.move(stack1, stack2);
     if (answer) {
       if (this.isWon()) {
@@ -73,7 +73,7 @@ Hanoi.prototype.run = function(completionCallback) {
     this.run(completionCallback);
   };
 
-  this.promptMove(newCallbackFunction);
+  this.promptMove(gameLogic);
 };
 
 var game = new Hanoi();
